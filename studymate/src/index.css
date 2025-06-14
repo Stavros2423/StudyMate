@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 262 83% 58%; /* Purple-based primary */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 60% 95%; /* Light purple secondary */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83% 97%; /* Very light purple accent */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%; /* Purple ring */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 7%; /* More grey background */
+    --foreground: 0 0% 95%; /* Light grey text */
+
+    --card: 0 0% 9%; /* Grey card background */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 262 83% 58%; /* Keep purple primary */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 15%; /* Grey secondary */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%; /* Grey muted */
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 18%; /* Grey accent */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%; /* Grey borders */
+    --input: 0 0% 16%; /* Grey input background */
+    --ring: 262 83% 58%; /* Keep purple ring */
+    
+    --sidebar-background: 0 0% 8%; /* Grey sidebar */
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 262 83% 58%; /* Purple sidebar primary */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%; /* Grey sidebar accent */
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%; /* Grey sidebar border */
+    --sidebar-ring: 262 83% 58%; /* Purple sidebar ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease forwards;
+  }
+  
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(47, 214, 181, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(47, 214, 181, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .mirror-text {
+    @apply font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-400 animate-mirror-effect;
+    background-size: 200% auto;
+  }
+  
+  /* Enhanced sidebar utilities */
+  .sidebar-hover-area {
+    @apply fixed inset-y-0 left-0 w-16 z-40;
+  }
+  
+  .sidebar-expanded {
+    @apply w-56 transition-all duration-300 ease-in-out;
+  }
+  
+  .sidebar-collapsed {
+    @apply w-14 transition-all duration-300 ease-in-out;
+  }
+  
+  .sidebar-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Purple gradient */
+  .purple-gradient {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(94, 58, 237, 0.05) 100%);
+  }
+  
+  /* Mirror text animation */
+  @keyframes mirrorEffect {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  .animate-mirror-effect {
+    animation: mirrorEffect 3s linear infinite;
+  }
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Enhanced focus states */
+:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:border-primary/30;
+}
+
+/* Button hover effects */
+.button-hover {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Glass effect for cards and UI elements */
+.glass-effect {
+  @apply bg-opacity-20 backdrop-blur-lg border border-white/10;
+}
+
+/* Blue-mint gradient backgrounds */
+.mint-gradient {
+  @apply bg-gradient-to-br from-teal-800 via-blue-900 to-background;
+}
