@@ -6,7 +6,7 @@ Our unique points-based system encourages students to contribute to the communit
 Run the site
 
 
-  1.Donwnload the files from " Code " button
+  1.Download the files from " Code " button
 
   2. Open you VScode
   
