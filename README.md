@@ -14,6 +14,6 @@ Run the site
   
   4. Go to terminal and run commant " npm install "
   
-  5. After that,type the command " npm run dev "
+  5. After that,type the command " npm run dev ", and click to the terminal link
   
   6. You are ready!
