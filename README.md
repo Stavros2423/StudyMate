@@ -9,6 +9,7 @@ Our unique points-based system encourages students to contribute to the communit
 
 # Run the website:
 
+
 ## 1. Install the repository using the following command and use the bellow commands to your intergrated terminal:
 
 ![Screenshot 2025-06-25 at 6 31 03 PM](https://github.com/user-attachments/assets/77adf2eb-3d28-45d0-8b28-b2911f30cf45)
@@ -18,10 +19,15 @@ Our unique points-based system encourages students to contribute to the communit
 npm install
 ```
 
+
+
 ## 2. Then run again in your intergrated terminal this command:
 
 ```sh
 npm run dev
 ```
+
+
+
 
 ## 3. and click to the link in terminal![Screenshot 2025-06-25 at 6 31 19 PM](https://github.com/user-attachments/assets/b1e19e0f-f88d-493d-b5e9-39d0418955c5)
